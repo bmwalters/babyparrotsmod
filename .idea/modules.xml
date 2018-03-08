@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/breedableparrotsmod.iml" filepath="$PROJECT_DIR$/.idea/modules/breedableparrotsmod.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/breedableparrotsmod_api.iml" filepath="$PROJECT_DIR$/.idea/modules/breedableparrotsmod_api.iml" group="breedableparrotsmod" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/breedableparrotsmod_main.iml" filepath="$PROJECT_DIR$/.idea/modules/breedableparrotsmod_main.iml" group="breedableparrotsmod" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/breedableparrotsmod_test.iml" filepath="$PROJECT_DIR$/.idea/modules/breedableparrotsmod_test.iml" group="breedableparrotsmod" />
+    </modules>
+  </component>
+</project>

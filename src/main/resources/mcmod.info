@@ -1,0 +1,16 @@
+[
+{
+  "modid": "breedableparrotsmod",
+  "name": "Breedable Parrots Mod",
+  "description": "Allows you to breed parrots.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["zerf"],
+  "credits": "The BBQ Rib Shack, The Forge and FML guys",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
