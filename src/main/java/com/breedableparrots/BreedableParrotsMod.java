@@ -1,5 +1,6 @@
 package com.breedableparrots;
 
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -19,6 +20,7 @@ public class BreedableParrotsMod
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         logger = event.getModLog();
+        RenderingRegistry.registerEntityRenderingHandler(EntityBreedableParrot.class, new RenderBreedableParrot.Factory());
     }
 
     @EventHandler
