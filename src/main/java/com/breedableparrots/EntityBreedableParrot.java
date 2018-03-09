@@ -52,6 +52,29 @@ public class EntityBreedableParrot extends EntityParrot {
     @Nullable
     @Override
     public EntityBreedableParrot createChild(EntityAgeable ageable) {
-        return new EntityBreedableParrot(this.world);
+        EntityParrot mate = (EntityParrot) ageable;
+
+        EntityBreedableParrot child = new EntityBreedableParrot(this.world);
+
+        if (this.isTamed()) {
+            child.setOwnerId(this.getOwnerId());
+            child.setTamed(true);
+        }
+
+        int variant;
+
+        int rand = this.rand.nextInt(100);
+
+        if (rand < 40) {
+            variant = this.getVariant();
+        } else if (rand < 80) {
+            variant = mate.getVariant();
+        } else {
+            variant = this.rand.nextInt(5);
+        }
+
+        child.setVariant(variant);
+
+        return child;
     }
 }
