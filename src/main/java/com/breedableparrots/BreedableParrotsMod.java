@@ -6,6 +6,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.Logger;
 
+@SuppressWarnings("unused")
 @Mod(modid = BreedableParrotsMod.MODID, name = BreedableParrotsMod.NAME, version = BreedableParrotsMod.VERSION)
 public class BreedableParrotsMod
 {

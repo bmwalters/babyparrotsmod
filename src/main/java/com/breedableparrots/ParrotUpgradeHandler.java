@@ -11,6 +11,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.EntityEntry;
 
+@SuppressWarnings("unused")
 @Mod.EventBusSubscriber
 public class ParrotUpgradeHandler {
     @SubscribeEvent
