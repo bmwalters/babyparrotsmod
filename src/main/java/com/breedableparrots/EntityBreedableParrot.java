@@ -6,13 +6,17 @@ import net.minecraft.entity.ai.EntityAIMate;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.passive.EntityParrot;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.EntityEntry;
 
 import javax.annotation.Nullable;
+import java.util.HashSet;
 
 public class EntityBreedableParrot extends EntityParrot {
+    static HashSet<Item> breedingItems = Sets.newHashSet(Items.WHEAT_SEEDS, Items.MELON_SEEDS, Items.PUMPKIN_SEEDS, Items.BEETROOT_SEEDS);
+
     public EntityBreedableParrot(World worldIn) {
         super(worldIn);
     }
@@ -30,7 +34,7 @@ public class EntityBreedableParrot extends EntityParrot {
 
     @Override
     public boolean isBreedingItem(ItemStack stack) {
-        return Sets.newHashSet(Items.WHEAT_SEEDS, Items.MELON_SEEDS, Items.PUMPKIN_SEEDS, Items.BEETROOT_SEEDS).contains(stack.getItem());
+        return EntityBreedableParrot.breedingItems.contains(stack.getItem());
     }
 
     @Override
@@ -75,6 +79,24 @@ public class EntityBreedableParrot extends EntityParrot {
 
         child.setVariant(variant);
 
+        ParrotTransformer.makeNormal(this);
+
+        if (ageable instanceof EntityBreedableParrot) {
+            ParrotTransformer.makeNormal((EntityBreedableParrot)ageable);
+        }
+
         return child;
+    }
+
+    @Override
+    protected void onGrowingAdult() {
+        super.onGrowingAdult();
+
+        ParrotTransformer.makeNormal(this);
+    }
+
+    @Override
+    public boolean canSitOnShoulder() {
+        return false; // TODO: fix this. currently they don't render
     }
 }
